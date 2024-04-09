@@ -20,10 +20,28 @@ pip install -r requirements.txt
 Start hot reload server
 
 ```
-uvicorn src.main:app --reload --port 5000
+uvicorn api.main:app --reload --port 5000
 ```
 
 ## Project Structure
-
-- `src/main.py` main fastapi server entrypoint
-- `src/db/model.py` SQL Alchemy database model for postgres
+```
+api/ - [fastapi app directory]
+│
+├── db/
+│   │
+│   └── db_models.py - [SQL Alchemy database model for postgres]
+│
+├── models/ - [pydantic models]
+│   │
+│   └── item.py
+│
+├── routers/ - [fastapi routers]
+│   │
+│   ├── root.py - [root router]
+│   ├── items.py - [items router]
+│   └── other_endpoints.py - [other endpoints router]   
+│
+├── main.py - [main fastapi server entrypoint]
+│
+└── utils.py - [fastapi utils]
+```
