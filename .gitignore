@@ -1,0 +1,11 @@
+#virtualenv
+venv
+
+#python files
+*.pyc
+__pycache__
+
+#configs
+.env
+
+.DS_Store
